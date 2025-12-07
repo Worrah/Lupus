@@ -12,30 +12,30 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg: Message = update.effective_message
     user = update.effective_user
 
-    # Тип сообщения
+    # Логируем автора и текст/медиа
     msg_type = "текст" if msg.text else "медиа"
     info(f"{user.username} ({user.id}) прислал {msg_type}")
 
-    # Проверка реплая
-    if msg.reply_to_message:
+    # Реплай
+    if getattr(msg, "reply_to_message", None):
         info(f"Это ответ на сообщение от {msg.reply_to_message.from_user.username}")
 
-    # Проверка форварда
-    if msg.forward_from or msg.forward_from_chat:
+    # Форварды
+    if getattr(msg, "forward_from", None) or getattr(msg, "forward_from_chat", None) or getattr(msg, "forward_sender_name", None):
         info("Это пересланное сообщение")
 
-    # Обработка текста
-    if msg.text:
+    # Обработка текстовых сообщений
+    if getattr(msg, "text", None):
         await msg.reply_text(f"Вы написали: {msg.text}")
 
     # Обработка медиа
-    elif msg.photo:
+    elif getattr(msg, "photo", None):
         await msg.reply_text("Вы отправили фото!")
-    elif msg.video:
+    elif getattr(msg, "video", None):
         await msg.reply_text("Вы отправили видео!")
-    elif msg.sticker:
+    elif getattr(msg, "sticker", None):
         await msg.reply_text("Это стикер!")
-    elif msg.document:
+    elif getattr(msg, "document", None):
         await msg.reply_text("Вы отправили документ!")
     else:
         await msg.reply_text("Получено сообщение неизвестного типа")
