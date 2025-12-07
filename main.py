@@ -1,4 +1,4 @@
-from telegram.ext import ApplicationBuilder, CommandHandler
+from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
 from modules import config, handlers
 from modules.logger import info,warn,error
 
@@ -9,12 +9,8 @@ def main():
     # добавляем обработчики команд
     app.add_handler(CommandHandler("start", handlers.start))
     app.add_handler(CommandHandler("help", handlers.help_command))
-
-    # логирование ошибки для примера
-    error("ЖОПА")
-    warn("ЖОПА")
-    info("ЖОПА")
-
+    app.add_handler(MessageHandler(filters.ALL, handlers.handle_message))
+    
     # запускаем поллинг (сам управляет event loop)
     app.run_polling()
 
