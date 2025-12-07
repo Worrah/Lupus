@@ -12,6 +12,7 @@ class SmartMessage:
         self.thread_id = update.effective_message.message_thread_id
         self.user: User = update.effective_user
         self.user_mention = self.user.mention_html()
+        self.username = self.user.username
         
         # Бот
         if hasattr(update, "get_bot"):

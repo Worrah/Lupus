@@ -16,4 +16,7 @@ async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     uid=update.message.from_user.id
     if lupus.message.reply_to_message:
         await lupus.reply('репля')
-        await lupus.reply(lupus.user_mention)
+        await lupus.reply(lupus.user.username)
+        await lupus.reply(lupus.user.first_name)
+        await lupus.reply(lupus.user.full_name)
+        await lupus.reply(lupus.user.mention_html())
