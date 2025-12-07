@@ -1,4 +1,4 @@
-from time import sleep
+from asyncio import sleep
 from telegram import Message
 
 class SmartMessage:
