@@ -11,7 +11,8 @@ class SmartMessage:
         self.chat_id = update.effective_chat.id if update.effective_chat else None
         self.thread_id = update.effective_message.message_thread_id
         self.user: User = update.effective_user
-        self.user_mention = update.effective_user.mention_html()
+        self.user_mention = self.user.mention_html()
+        
         # Бот
         if hasattr(update, "get_bot"):
             self.bot = update.get_bot()
@@ -23,23 +24,7 @@ class SmartMessage:
         # Если апдейт содержит сообщение
         self.message: Message | None = update.effective_message
 
-    # ----------------------------
-    # Пользовательские данные
-    # ----------------------------
-    @property
-    def user_mention(self):
-        if self.user:
-            return self.user.mention_html()
-        return "Unknown"
 
-    @property
-    def name(self):
-        return self.user.full_name if self.user else "Unknown"
-
-    @property
-    def username(self):
-        return self.user.username if self.user.username else "None"
-    
     async def send_action(self, action: str = "typing"):
         """
         action: "typing", "upload_photo", "record_video", "upload_video", "record_audio", "upload_audio", "upload_document", "find_location", "record_video_note", "upload_video_note"
