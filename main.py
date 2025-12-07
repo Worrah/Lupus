@@ -13,7 +13,8 @@ def main():
 
     # запускаем поллинг (сам управляет event loop)
     app.run_polling()
+    info('БОТ ЗАПУЩЕН')
 
 if __name__ == "__main__":
     main()
-    info('БОТ ЗАПУЩЕН')
+    info('ЗАВЕРШАЮСЬ')
