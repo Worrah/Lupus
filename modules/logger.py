@@ -17,10 +17,3 @@ console_handler = logging.StreamHandler(sys.stdout)
 console_handler.setFormatter(logging.Formatter(LOG_FORMAT, DATE_FORMAT))
 logger.addHandler(console_handler)
 
-# Поток для файла с ротацией (5 файлов по 1МБ)
-file_handler = RotatingFileHandler(
-    "logs/bot.log", maxBytes=1_000_000, backupCount=5
-)
-file_handler.setFormatter(logging.Formatter(LOG_FORMAT, DATE_FORMAT))
-logger.addHandler(file_handler)
-
