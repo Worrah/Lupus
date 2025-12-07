@@ -10,4 +10,5 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Список команд: /start, /help")
 
 async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    reply('жепа')
+    message=update.effective_message
+    reply(message,'жепа')
