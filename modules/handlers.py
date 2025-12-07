@@ -12,5 +12,6 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lupus=SmartMessage(update.effective_message)
     chat_id=update.message.chat.id
+    await lupus.send_action()
     await lupus.reply('жепа')
     await lupus.send_message('попа')
