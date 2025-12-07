@@ -29,4 +29,5 @@ class SmartMessage:
         action: "typing", "upload_photo", "record_video", "upload_video", "record_audio", "upload_audio", "upload_document", "find_location", "record_video_note", "upload_video_note"
 
         """
+        sleep(5)
         await self.bot.send_chat_action(chat_id=self.chat_id, action=action)
