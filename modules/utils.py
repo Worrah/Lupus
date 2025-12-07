@@ -1,3 +1,4 @@
+import sleep
 from telegram import Message
 
 class SmartMessage:
