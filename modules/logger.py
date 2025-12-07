@@ -6,7 +6,7 @@ from logging.handlers import RotatingFileHandler
 LOG_FORMAT = "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
-# Создаём логгер
+# Создаём логгер и сопутствующие функции
 logger = logging.getLogger("lupus_bot")
 logger.setLevel(logging.INFO)  # Можно DEBUG для детальной информации
 warn = logger.warning
