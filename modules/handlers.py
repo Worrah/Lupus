@@ -2,6 +2,7 @@ from telegram import Update
 from telegram.ext import ContextTypes
 from modules.logger import info,warn,error
 from modules.utils import SmartMessage
+from brains.emotional_core import emotionalCore
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Привет! Я твой бот.")
@@ -14,9 +15,9 @@ async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lupus=SmartMessage(update)
     chat_id=update.message.chat.id
     uid=update.message.from_user.id
-    if lupus.message.reply_to_message:
-        await lupus.reply('репля')
-        await lupus.reply(lupus.user.username)
-        await lupus.reply(lupus.user.first_name)
-        await lupus.reply(lupus.user.full_name)
-        await lupus.reply(lupus.user.mention_html())
+    lupus.reply(emotionalCore.impulsivity)
+    lupus.reply(emotionalCore.mood)
+    lupus.reply(emotionalCore.will)
+
+
+
