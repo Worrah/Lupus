@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import ContextTypes
 from modules.logger import info,warn,error
-from modules.utils import *
+from modules.utils import SmartMessage
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Привет! Я твой бот.")
@@ -10,5 +10,6 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Список команд: /start, /help")
 
 async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    message=update.effective_message
-    await reply(message,'жепа')
+    lupus=SmartMessage(update.effective_message)
+    chat_id=update.message.chat.id
+    await lupus.reply('жепа')
