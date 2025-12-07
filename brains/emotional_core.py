@@ -3,7 +3,7 @@ import urllib, random
 url = 'https://www.random.org/integers/?num=0&min=0&max=10&col=1&base=10&format=plain&rnd=new'
 
 class emotionalCore:
-    async def pure_random():
+    def pure_random():
         """
         Почти истинный рандом
         """
