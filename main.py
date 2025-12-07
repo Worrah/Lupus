@@ -9,7 +9,7 @@ async def main():
     app.add_handler(CommandHandler("start", handlers.start))
     app.add_handler(CommandHandler("help", handlers.help_command))
 
-    warn("Бот запущен...")
+
     await app.run_polling()
 
 if __name__ == "__main__":
