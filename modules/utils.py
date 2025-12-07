@@ -1,4 +1,4 @@
-import sleep
+from time import sleep
 from telegram import Message
 
 class SmartMessage:
