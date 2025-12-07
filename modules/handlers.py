@@ -10,8 +10,9 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Список команд: /start, /help")
 
 async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    #Объявление всяких начальных упрощающих переменных
     lupus=SmartMessage(update.effective_message)
     chat_id=update.message.chat.id
-    await lupus.send_action()
-    await lupus.reply('жепа')
-    await lupus.send_message('попа')
+    uid=update.message.from_user.id
+    if lupus.message.reply_to_message:
+        lupus.reply('репля')
