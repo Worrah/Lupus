@@ -11,7 +11,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     #Объявление всяких начальных упрощающих переменных
-    lupus=SmartMessage(update.effective_message)
+    lupus=SmartMessage(update)
     chat_id=update.message.chat.id
     uid=update.message.from_user.id
     if lupus.message.reply_to_message:
