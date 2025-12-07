@@ -15,9 +15,9 @@ async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lupus=SmartMessage(update)
     chat_id=update.message.chat.id
     uid=update.message.from_user.id
-    lupus.reply(emotionalCore.impulsivity)
-    lupus.reply(emotionalCore.mood)
-    lupus.reply(emotionalCore.will)
+    await lupus.reply(emotionalCore.impulsivity)
+    await lupus.reply(emotionalCore.mood)
+    await lupus.reply(emotionalCore.will)
 
 
 
