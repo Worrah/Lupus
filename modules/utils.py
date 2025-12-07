@@ -32,4 +32,4 @@ class SmartMessage:
         """
         
         await self.bot.send_chat_action(chat_id=self.chat_id, action=action)
-        sleep(30)
+        await sleep(30)
