@@ -14,7 +14,7 @@ class emotionalCore:
         return num
 
     @property
-    async def mood(self):
+    def mood(self):
         """
         Общее ядро настроения
         """
@@ -26,7 +26,7 @@ class emotionalCore:
             return 'Happy'
         
     @property
-    async def will(self):
+    def will(self):
         """
         Общее ядро желаний
         """
@@ -38,7 +38,7 @@ class emotionalCore:
             return 'Curious'
         
     @property
-    async def impulsivity(self):
+    def impulsivity(self):
         """
         Общее ядро активности
         """
