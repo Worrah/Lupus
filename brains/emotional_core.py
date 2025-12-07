@@ -18,9 +18,9 @@ class emotionalCore:
         """
         Общее ядро настроения
         """
-        if pure_random<4:
+        if self.pure_random()<4:
             return 'Sad'
-        elif 3<pure_random<7:
+        elif 3<self.pure_random()<7:
             return 'Neutral'
         else:
             return 'Happy'
@@ -30,9 +30,9 @@ class emotionalCore:
         """
         Общее ядро желаний
         """
-        if pure_random<4:
+        if self.pure_random()<4:
             return 'Depressive'
-        elif 3<pure_random<7:
+        elif 3<self.pure_random()<7:
             return 'Neutral'
         else:
             return 'Curious'
@@ -42,9 +42,9 @@ class emotionalCore:
         """
         Общее ядро активности
         """
-        if pure_random<4:
+        if self.pure_random()<4:
             return 'Passive'
-        elif 3<pure_random<7:
+        elif 3<self.pure_random()<7:
             return 'Neutral'
         else:
             return 'Active'
