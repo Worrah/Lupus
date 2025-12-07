@@ -1,4 +1,4 @@
-from telegram import Message, Update, ChatAction, User
+from telegram import Message, Update, User
 from telegram.ext import ContextTypes
 import asyncio
 
