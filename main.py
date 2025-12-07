@@ -9,8 +9,8 @@ def main():
     # добавляем обработчики команд
     app.add_handler(CommandHandler("start", handlers.start))
     app.add_handler(CommandHandler("help", handlers.help_command))
-    app.add_handler(MessageHandler(filters.ALL, handlers.handle_message))
-    
+    app.add_handler(MessageHandler(filters.ALL, handlers.message_handler))
+
     # запускаем поллинг (сам управляет event loop)
     app.run_polling()
 
