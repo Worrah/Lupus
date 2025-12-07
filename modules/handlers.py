@@ -13,11 +13,12 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     #Объявление всяких начальных упрощающих переменных
     lupus=SmartMessage(update)
+    core=emotionalCore
     chat_id=update.message.chat.id
     uid=update.message.from_user.id
-    await lupus.reply(emotionalCore.impulsivity)
-    await lupus.reply(emotionalCore.mood)
-    await lupus.reply(emotionalCore.will)
+    await lupus.reply(core.impulsivity)
+    await lupus.reply(core.mood)
+    await lupus.reply(core.will)
 
 
 
