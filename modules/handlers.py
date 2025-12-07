@@ -15,4 +15,5 @@ async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     chat_id=update.message.chat.id
     uid=update.message.from_user.id
     if lupus.message.reply_to_message:
-        lupus.reply('репля')
+        await lupus.reply('репля')
+        await lupus.reply(lupus.user_mention)
