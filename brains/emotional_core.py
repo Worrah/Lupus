@@ -3,7 +3,7 @@ import urllib, random
 url = 'https://www.random.org/integers/?num=0&min=0&max=10&col=1&base=10&format=plain&rnd=new'
 
 class emotionalCore:
-    def pure_random():
+    def pure_random(self):
         """
         Почти истинный рандом
         """
@@ -18,9 +18,10 @@ class emotionalCore:
         """
         Общее ядро настроения
         """
-        if self.pure_random()<4:
+        current = self.pure_random()
+        if current<4:
             return 'Sad'
-        elif 3<self.pure_random()<7:
+        elif 4<=current<7:
             return 'Neutral'
         else:
             return 'Happy'
@@ -30,9 +31,10 @@ class emotionalCore:
         """
         Общее ядро желаний
         """
-        if self.pure_random()<4:
+        current = self.pure_random()
+        if current<4:
             return 'Depressive'
-        elif 3<self.pure_random()<7:
+        elif 4<=current<7:
             return 'Neutral'
         else:
             return 'Curious'
@@ -42,9 +44,10 @@ class emotionalCore:
         """
         Общее ядро активности
         """
-        if self.pure_random()<4:
+        current = self.pure_random()
+        if current<4:
             return 'Passive'
-        elif 3<self.pure_random()<7:
+        elif 4<=current<7:
             return 'Neutral'
         else:
             return 'Active'
