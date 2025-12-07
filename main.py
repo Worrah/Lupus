@@ -12,9 +12,9 @@ def main():
     app.add_handler(MessageHandler(filters.ALL, handlers.message_handler))
 
     # запускаем поллинг (сам управляет event loop)
-    app.run_polling()
     info('БОТ ЗАПУЩЕН')
+    app.run_polling()
+    
 
 if __name__ == "__main__":
     main()
-    info('ЗАВЕРШАЮСЬ')
